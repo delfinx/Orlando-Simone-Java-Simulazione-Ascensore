@@ -21,7 +21,7 @@ public class Piano {
     public String toString(){
         String recap = "";
         for(Persona persona: codaPersone){
-            recap += persona.toString() + " persona in coda "; //sempre il problema per capire come stampare il contenuto dell'arreylist
+            recap += numeroPiano + "\n" + codaPersone.size(); //sempre il problema per capire come stampare il contenuto dell'arreylist
         }
         return recap;
     }

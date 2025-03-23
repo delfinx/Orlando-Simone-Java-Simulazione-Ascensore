@@ -30,8 +30,14 @@ public class main
 
 		System.out.println("------------------------");
 
-		Piano piano1 = new Piano(1, listaPersone);
+		Piano piano1 = new Piano(2, listaPersone);		
+		//aggiunta nuova persona per controllare til toString in piano - cioè coda persone che richiede l'aggiunta di una persona in coda
+		Persona Ionela = new Persona(200, 3);
+
+		listaPersone.add(Ionela);
+
+		ascensore.aggiungiPersona(Ionela);
 		System.out.println(piano1.toString());
-	
+
 	}
 }
