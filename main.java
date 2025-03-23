@@ -9,18 +9,28 @@ public class main
 
 		System.out.println(Marco.toString());
 
+		System.out.println("------------------------");
+
 		ArrayList<Persona> listaPersone = new ArrayList<>();
 		Ascensore ascensore = new Ascensore(0, 	8, listaPersone);
-
 		listaPersone.add(Marco);
 		System.out.println(ascensore.toString());
 
 		int destinazioneMarco = Marco.getPianoDestinazione();
-		System.out.println("Destinazione: " + destinazioneMarco);
+		System.out.println("Destinazione di Marco: " + destinazioneMarco);
 
-		ascensore.rimuoviPersoneArrivate();
+		Marco.settPianoDestinazione(1);
+
+		destinazioneMarco = Marco.getPianoDestinazione(); 
+		System.out.println("Destinazione di Marco: " + destinazioneMarco);
+
+		ascensore.rimuoviPersoneArrivate();	//funziona nn worka
 		System.out.println(ascensore.toString()); //devo far si che si toglie la persona all'interno
 
+		System.out.println("------------------------");
 
+		Piano piano1 = new Piano(1, listaPersone);
+		System.out.println(piano1.toString());
+	
 	}
 }

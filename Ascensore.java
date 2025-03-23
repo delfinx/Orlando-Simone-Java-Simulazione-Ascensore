@@ -25,8 +25,7 @@ public class Ascensore {
             personeDentro.add(p);
         }
     }
-    
-    
+
     public void rimuoviPersoneArrivate(){
         for (int i = 0; i < personeDentro.size(); i++) {
             Persona persona = personeDentro.get(i);
@@ -42,7 +41,7 @@ public class Ascensore {
     public String toString(){
         String recap = "";
         for(Persona persona: personeDentro){
-            recap += persona.toString() + " persona dentro ";
+            recap += pianoCorrente + "\n" + capienzaMassima + "\n" + personeDentro.size(); //dopo rimuovepersone deve rimuovere la persona ma nn lo fa
         }
         return recap;
     }

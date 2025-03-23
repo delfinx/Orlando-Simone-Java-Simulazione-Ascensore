@@ -20,8 +20,12 @@ public class Persona {
         return recap;
     }
 
-    public int getPianoDestinazione() {  // Getter per accedere al valore
+    public int getPianoDestinazione() {  
         return pianoDestinazione;
+    }
+
+    public void settPianoDestinazione(int Destinazione) {  
+        this.pianoDestinazione = Destinazione;
     }
 
     
