@@ -19,13 +19,14 @@ public class main
 		int destinazioneMarco = Marco.getPianoDestinazione();
 		System.out.println("Destinazione di Marco: " + destinazioneMarco);
 
-		Marco.settPianoDestinazione(1);
+		Marco.settPianoDestinazione(0);
+		ascensore.apriPorte();
 
 		destinazioneMarco = Marco.getPianoDestinazione(); 
 		System.out.println("Destinazione di Marco: " + destinazioneMarco);
 
-		ascensore.rimuoviPersoneArrivate();	//funziona nn worka
-		System.out.println(ascensore.toString()); //devo far si che si toglie la persona all'interno
+		ascensore.rimuoviPersoneArrivate();	
+		System.out.println(ascensore.toString()); 
 
 		System.out.println("------------------------");
 
