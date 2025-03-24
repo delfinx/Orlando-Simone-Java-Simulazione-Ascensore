@@ -6,11 +6,10 @@ public class Ascensore {
     private ArrayList<Persona> personeDentro = new ArrayList<>();
     private boolean porteAperte;
 
-    public Ascensore(int pianoCorrente, int capienzaMassima, ArrayList<Persona> personeDentro){
+    public Ascensore(int pianoCorrente, int capienzaMassima){ //però se creo una persona nuova ma le crea in automatico nelle persone dentro
         this.pianoCorrente = pianoCorrente;
         this.capienzaMassima = capienzaMassima; //facciamo che sia 8
-        this.personeDentro = personeDentro;
-    }
+            }
 
     public void apriPorte(){
         porteAperte = true;
