@@ -20,8 +20,12 @@ public class Ascensore {
         porteAperte = false;
     }
 
+    public boolean getStatusPorte(){
+        return porteAperte;
+    }
+
     public void aggiungiPersona(Persona p){
-        if(capienzaMassima < 8 && porteAperte == true){
+        if(personeDentro.size() < capienzaMassima && getStatusPorte() == true){
             personeDentro.add(p);
         }
     }
@@ -41,9 +45,13 @@ public class Ascensore {
     public String toString(){
         String recap = "";
         for(Persona persona: personeDentro){
-            recap += pianoCorrente + "\n" + capienzaMassima + "\n" + personeDentro.size(); //dopo rimuovepersone deve rimuovere la persona ma nn lo fa
+            recap = "Piano corrente: " + pianoCorrente + "\n" + "Capienza massima: " + capienzaMassima + "\n" + "Persone dentro: " + personeDentro.size(); //dopo rimuovepersone deve rimuovere la persona ma nn lo fa
         }
         return recap;
+    }
+
+    public int getPianoCorrente(){
+        return pianoCorrente;
     }
 
     

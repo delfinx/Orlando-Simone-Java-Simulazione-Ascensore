@@ -1,22 +1,28 @@
 public class Persona {
     private int id;
     private int pianoDestinazione;
+    private int pianoCorrentePersona;
 
-    public Persona(int id, int pianoDestinazione){  
+    public Persona(int id, int pianoDestinazione, int pianoCorrentePersona){  
         this.id = id;
         this.pianoDestinazione = pianoDestinazione;
     }
 
-    /*public void saliSuAscensore(Ascensore a){
-        //io lo farei con extends Ascensore ma non saprei se è corretto estendere l'ascensore
+    public void saliSuAscensore(Ascensore ascensore, Persona personaDaAggiungere){
+        if(pianoCorrentePersona == ascensore.getPianoCorrente() && ascensore.getStatusPorte() == true){
+            ascensore.aggiungiPersona(personaDaAggiungere);
+        }
+        else{
+            System.out.println("Ciao");
+        }
     }
 
-    public void scendiDaAscensore(Ascensore a){
+    /*public void scendiDaAscensore(Ascensore a){
     
     }*/
 
     public String toString(){
-        String recap = this.id + "\n" + this.pianoDestinazione;
+        String recap = "L'id è: " + this.id + "\n" + "La sua destinazione è: " + this.pianoDestinazione;
         return recap;
     }
 
