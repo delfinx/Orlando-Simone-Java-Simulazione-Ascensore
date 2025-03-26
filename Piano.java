@@ -30,17 +30,6 @@ public class Piano {
         return numeroPiano;
     }
 
-    
-    public void chiamaAscensore(Ascensore ascensore, Persona persona) {
-        if (ascensore.getNumeroPersone() < 8) {
-            ascensore.apriPorte();
-            persona.saliSuAscensore(ascensore, persona);
-            ascensore.chiudiPorte();
-        } else {
-            System.out.println("L'ascensore è pieno. Attendere che si svuoti.");
-        }
-    }
-
     public int getCodaPersone(){
         int recap = 0;
         for(Persona persona: codaPersone){
