@@ -32,7 +32,7 @@ public class main {
 		 * System.out.println("Destinazione di Marco: " + destinazioneMarco);
 		 */
 
-		Marco.settPianoDestinazione(0);
+		Marco.setPianoDestinazione(0);
 		ascensore.apriPorte();
 		/*
 		 * destinazioneMarco = Marco.getPianoDestinazione();
@@ -42,7 +42,7 @@ public class main {
 
 		System.out.println("Prima di rimuoviPersoneArrivate: " + ascensore.toString());
 
-		ascensore.rimuoviPersoneArrivate();
+		ascensore.rimuoviPersoneArrivate(Marco);
 
 		System.out.println("Dopo rimuoviPersoneArrivate: " + ascensore.toString()); // non stampa perchè togliendo la
 																					// persona dentro l'ascensore resta
@@ -69,5 +69,9 @@ public class main {
 		System.out.println(piano1.toString());
 		System.out.println(ascensore.toString());
 
+		//CREATA NUOVA PERSONA
+		Persona Isra = new Persona(300, 2, 0);
+		
+		
 	}
 }

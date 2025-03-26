@@ -13,9 +13,9 @@ public class Piano {
         codaPersone.add(p);
     }
 
-    /*public Persona rimuoviPersonaCoda(){
-
-    }*/
+    public void rimuoviPersonaCoda(Persona p){
+        codaPersone.remove(p);
+    }
 
     @Override
     public String toString(){
@@ -28,5 +28,24 @@ public class Piano {
 
     public int getNumeroPiano(){
         return numeroPiano;
+    }
+
+    
+    public void chiamaAscensore(Ascensore ascensore, Persona persona) {
+        if (ascensore.getNumeroPersone() < 8) {
+            ascensore.apriPorte();
+            persona.saliSuAscensore(ascensore, persona);
+            ascensore.chiudiPorte();
+        } else {
+            System.out.println("L'ascensore è pieno. Attendere che si svuoti.");
+        }
+    }
+
+    public int getCodaPersone(){
+        int recap = 0;
+        for(Persona persona: codaPersone){
+            recap++;
+        }
+        return recap;
     }
 }

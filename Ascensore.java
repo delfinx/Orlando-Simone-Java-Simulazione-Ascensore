@@ -29,15 +29,38 @@ public class Ascensore {
         }
     }
 
-    public void rimuoviPersoneArrivate(){
+    public void rimuoviPersoneArrivate(Persona p){
         for (int i = 0; i < personeDentro.size(); i++) {
-            Persona persona = personeDentro.get(i);
+            p = personeDentro.get(i);
             
-            if (persona.getPianoDestinazione() == pianoCorrente && porteAperte == true) {
+            if (p.getPianoDestinazione() == pianoCorrente && porteAperte == true) {
                 personeDentro.remove(i);
                 i--; 
             }
         }
+    }
+
+    public void salita(){
+        if(pianoCorrente < 8){
+            pianoCorrente++;
+        }
+        else{
+            System.out.println("Piano massimo raggiunto");
+        }
+    }
+
+    public void discesa(){
+        if(pianoCorrente > 0){
+            pianoCorrente--;
+        }
+        else{
+            System.out.println("Piano terra raggiunto");
+        }
+        
+    }
+
+    public int getNumeroPersone() {
+        return personeDentro.size();
     }
 
     @Override
@@ -53,5 +76,13 @@ public class Ascensore {
         return pianoCorrente;
     }
 
+    public void decidiDirezione(Piano piano){
+        if(piano.getCodaPersone() >= 3 && getNumeroPersone() <= 3){
+            pianoCorrente = 8;
+        }
+        else{
+            pianoCorrente = 0;
+        }
+    }
     
 }

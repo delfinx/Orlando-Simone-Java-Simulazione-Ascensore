@@ -12,14 +12,16 @@ public class Persona {
         if(pianoCorrentePersona == ascensore.getPianoCorrente() && ascensore.getStatusPorte() == true){
             ascensore.aggiungiPersona(personaDaAggiungere);
         }
-        else{
-            System.out.println("Ciao");
-        }
     }
 
-    /*public void scendiDaAscensore(Ascensore a){
+    public void scendiDaAscensore(Ascensore ascensore, Persona personaDaRimuovere){
+        if(pianoCorrentePersona == ascensore.getPianoCorrente() && ascensore.getStatusPorte() == true){
+            ascensore.rimuoviPersoneArrivate(personaDaRimuovere);
+        }
+    }
     
-    }*/
+
+    
 
     public String toString(){
         String recap = "L'id è: " + this.id + "\n" + "La sua destinazione è: " + this.pianoDestinazione;
@@ -30,7 +32,7 @@ public class Persona {
         return pianoDestinazione;
     }
 
-    public void settPianoDestinazione(int Destinazione) {  
+    public void setPianoDestinazione(int Destinazione) {  
         this.pianoDestinazione = Destinazione;
     }
 
