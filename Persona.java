@@ -19,9 +19,6 @@ public class Persona {
             ascensore.rimuoviPersoneArrivate(personaDaRimuovere);
         }
     }
-    
-
-    
 
     public String toString(){
         String recap = "L'id è: " + this.id + "\n" + "La sua destinazione è: " + this.pianoDestinazione;
