@@ -38,5 +38,8 @@ public class Persona {
         return id;
     }
 
+    public int getPianoCorrente(){
+        return pianoCorrentePersona;
+    }
     
 }

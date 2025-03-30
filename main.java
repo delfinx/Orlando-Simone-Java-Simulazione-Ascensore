@@ -22,9 +22,12 @@ public class main {
 		ArrayList<Persona> codaPersone = new ArrayList<>();
 		Piano piano1 = new Piano(2, codaPersone);*/
 		for(Persona persona: listaPersone){
-			int randomDestinazione =  (int) (Math.random()*8+1);
+			int randomDestinazione = 0;
+			do {
+        		randomDestinazione = (int) (Math.random()*8+0);
+    		} while (randomDestinazione == persona.getPianoCorrente());
 			persona.setPianoDestinazione(randomDestinazione);
-			System.out.println(persona.getId() + " ha destinazione al piano " + persona.getPianoDestinazione());
+			System.out.println(persona.getId() + " ha destinazione al piano " + persona.getPianoDestinazione() + " e la sua partenza: " + persona.getPianoCorrente());
         }
 
 		
