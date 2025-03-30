@@ -65,13 +65,13 @@ public class Ascensore {
     }
 
     @Override
-    public String toString(){
-        String recap = "";
-        for(Persona persona: personeDentro){
-            recap = "Piano corrente: " + pianoCorrente + "\n" + "Capienza massima: " + capienzaMassima + "\n" + "Persone dentro: " + personeDentro.size(); //dopo rimuovepersone deve rimuovere la persona ma nn lo fa
-        }
-        return recap;
+    public String toString() {
+    String recap = "Piano corrente: " + pianoCorrente + "\n" + "Capienza massima: " + capienzaMassima + "\n" + "Persone dentro: " + personeDentro.size() + "\n";
+    for (Persona persona : personeDentro) {
+        recap += "Persona ID: " + persona.getId() + ", Destinazione: " + persona.getPianoDestinazione() + "\n"; // Concatenazione corretta
     }
+    return recap;
+}
 
     public int getPianoCorrente(){
         return pianoCorrente;

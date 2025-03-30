@@ -18,13 +18,13 @@ public class Piano {
     }
 
     @Override
-    public String toString(){
-        String recap = "";
-        for(Persona persona: codaPersone){
-            recap = "Numero piano: " + numeroPiano + "\n" + "Persona in coda: " + codaPersone.size(); 
-        }
-        return recap;
+    public String toString() {
+    String recap = "";
+    for (Persona persona : codaPersone) {
+        recap = "Numero piano: " +  numeroPiano + " Destinazione: " +  persona.getPianoDestinazione() + "\n"; // Concatenazione corretta
     }
+    return recap;
+}
 
     public int getNumeroPiano(){
         return numeroPiano;
