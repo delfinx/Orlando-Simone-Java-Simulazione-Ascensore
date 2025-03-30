@@ -36,7 +36,7 @@ public class main {
         
 
         // Eseguire 12 giri di simulazione
-        for (int i = 0; i < 12; i++) {
+        for (int i = 0; i < 10; i++) {
             System.out.println("\n--- Giro " + (i + 1) + " ---");
 
             // Controllo dello stato delle persone
@@ -52,9 +52,36 @@ public class main {
     }
 
     public static void chiamaAscensore(Ascensore ascensore, Piano piano1, ArrayList<Persona> codaPersone, ArrayList<Persona> listaPersone) {
-        for(int i = 0; i < 10; i++){
-            for (Persona persona : listaPersone) { 
-                if()
+        for (Persona persona : listaPersone) { // Ciclo che controlla persona per persona
+            // Se la persona non è al piano corrente dell'ascensore
+            if (persona.getPianoCorrente() != ascensore.getPianoCorrente() && !codaPersone.contains(persona)) {
+                piano1.aggiungiPersonaCoda(persona); // Aggiungi la persona alla coda
+                System.out.println("Persona ID: " + persona.getId() + " aggiunta alla coda al piano " + persona.getPianoCorrente());
+            } else {
+                if (ascensore.getNumeroPersone() < 8) { // Se c'è spazio nell'ascensore
+                    ascensore.apriPorte();
+                    persona.saliSuAscensore(ascensore, persona); // La persona sale sull'ascensore
+                    piano1.rimuoviPersonaCoda(persona); // Rimuovi la persona dalla coda del piano
+                    ascensore.chiudiPorte();
+    
+                    // Se ci sono meno di 4 persone, l'ascensore si muove immediatamente verso la destinazione della persona
+                    if (ascensore.getNumeroPersone() < 4) {
+                        // Spostamento dell'ascensore fino al piano di destinazione della persona
+                        while (ascensore.getPianoCorrente() < persona.getPianoDestinazione()) {
+                            ascensore.salita();
+                            if (persona.getPianoDestinazione() == ascensore.getPianoCorrente()) {
+                                persona.scendiDaAscensore(ascensore, persona);
+                            }
+                        }
+                        while (ascensore.getPianoCorrente() > persona.getPianoDestinazione()) {
+                            ascensore.discesa();
+                        }
+                    }
+                } else {
+                    // Se l'ascensore è pieno, la persona rimane in coda
+                    System.out.println("L'ascensore è pieno, persona " + persona.getId() + " aspetta in coda.");
+                    codaPersone.add(persona);
+                }
             }
         }
     }
