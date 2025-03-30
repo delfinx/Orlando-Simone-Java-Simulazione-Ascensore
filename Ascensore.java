@@ -67,9 +67,6 @@ public class Ascensore {
     @Override
     public String toString() {
     String recap = "Piano corrente: " + pianoCorrente + "\n" + "Capienza massima: " + capienzaMassima + "\n" + "Persone dentro: " + personeDentro.size() + "\n";
-    for (Persona persona : personeDentro) {
-        recap += "Persona ID: " + persona.getId() + ", Destinazione: " + persona.getPianoDestinazione() + "\n"; // Concatenazione corretta
-    }
     return recap;
 }
 

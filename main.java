@@ -45,22 +45,24 @@ public class main {
             ascensore.decidiDirezione(piano1);
             chiamaAscensore(ascensore, piano1, codaPersone, listaPersone);
             System.out.println(ascensore.toString());
-            System.out.println(piano1.toString());
+       
         }
 
         
     }
 
     public static void chiamaAscensore(Ascensore ascensore, Piano piano1, ArrayList<Persona> codaPersone, ArrayList<Persona> listaPersone) {
-        for (Persona persona : listaPersone) { // Ciclo che controlla persona per persona
+        for (Persona persona : listaPersone) { 
             // Se la persona non è al piano corrente dell'ascensore
             if (persona.getPianoCorrente() != ascensore.getPianoCorrente()) {
-                piano1.aggiungiPersonaCoda(persona); // Aggiungi la persona alla coda
+                piano1.aggiungiPersonaCoda(persona);
                 System.out.println("Persona ID: " + persona.getId() + " aggiunta alla coda al piano " + persona.getPianoCorrente());
-            } else {
+            }
+            else {
                 if (ascensore.getNumeroPersone() < 8) { // Se c'è spazio nell'ascensore
                     ascensore.apriPorte();
                     persona.saliSuAscensore(ascensore, persona); // La persona sale sull'ascensore
+                    System.out.println("Persona salita sull'ascensore: " + persona.getId());
                     piano1.rimuoviPersonaCoda(persona); // Rimuovi la persona dalla coda del piano
                     ascensore.chiudiPorte();
     
@@ -69,6 +71,7 @@ public class main {
                         // Spostamento dell'ascensore fino al piano di destinazione della persona
                         while (ascensore.getPianoCorrente() < persona.getPianoDestinazione()) {
                             ascensore.salita();
+                            ascensore.apriPorte();
                             if (persona.getPianoDestinazione() == ascensore.getPianoCorrente()) {
                                 persona.scendiDaAscensore(ascensore, persona);
                             }
