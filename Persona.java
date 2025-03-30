@@ -6,6 +6,7 @@ public class Persona {
     public Persona(int id, int pianoDestinazione, int pianoCorrentePersona){  
         this.id = id;
         this.pianoDestinazione = pianoDestinazione;
+        this.pianoCorrentePersona = pianoCorrentePersona;
     }
 
     public void saliSuAscensore(Ascensore ascensore, Persona personaDaAggiungere){
@@ -31,6 +32,10 @@ public class Persona {
 
     public void setPianoDestinazione(int Destinazione) {  
         this.pianoDestinazione = Destinazione;
+    }
+
+    public int getId(){
+        return id;
     }
 
     

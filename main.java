@@ -12,24 +12,26 @@ public class main {
 		Persona Matteo = new Persona(300, 0, 0);
 		Persona Sergio = new Persona(400, 0, 0);
 		
-		ArrayList<Persona> listaPersone = new ArrayList<>()(List.of(Isra, Ionela, Matteo, Sergio));
+		ArrayList<Persona> listaPersone = new ArrayList<>();
+		listaPersone.add(Isra);
+		listaPersone.add(Ionela);
+		listaPersone.add(Matteo);
+		listaPersone.add(Sergio);
 		/*Ascensore ascensore = new Ascensore(0, 8, listaPersone);
 		// CREATO PIANO1
 		ArrayList<Persona> codaPersone = new ArrayList<>();
 		Piano piano1 = new Piano(2, codaPersone);*/
 		for(Persona persona: listaPersone){
-			int randomDestinazione = destinazionePersonaRandom();
-			persona.setPianoDestinazione(destinazioneCasuale);
-			System.out.println(persona.id+ " ha destinazione al piano " + persona.getPianoDestinazione);
+			int randomDestinazione =  (int) (Math.random()*8+1);
+			persona.setPianoDestinazione(randomDestinazione);
+			System.out.println(persona.getId() + " ha destinazione al piano " + persona.getPianoDestinazione());
         }
 
+		
 
 		}
-		listaPersone.add(Marco);
 		
-		
-	}
-	public void chiamaAscensore(Ascensore ascensore, Persona persona) {
+		public void chiamaAscensore(Ascensore ascensore, Persona persona) {
          if (ascensore.getNumeroPersone() < 8) {
              ascensore.apriPorte();
              persona.saliSuAscensore(ascensore, persona);
@@ -39,8 +41,9 @@ public class main {
          }
      }
 
-	 public String DestinazionePersonaRandom(Persona persona){
-		String destinazionePersonaRandom = (int) (Math.random()*8+0);
-		return destinazionePersonaRandom;
+	 
 	 }
-}
+		
+	
+	
+
